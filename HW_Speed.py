@@ -53,5 +53,8 @@ while True:
     data = {"auth_token":"YOUR_AUTH_TOKEN","current":speedMPH}
     data_json = json.dumps(data)
     req = urllib2.Request(url, data=data_json, headers=headers)
-    f = urllib2.urlopen(req)
+    try:
+        f = urllib2.urlopen(req)
+    except:
+        pass
     f.close()
