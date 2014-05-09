@@ -7,7 +7,7 @@
 import time
 import RPi.GPIO as GPIO, time, os
 import numpy
-import requests
+import urllib2
 import json
 
 DEBUG = 1
@@ -52,4 +52,6 @@ while True:
     speedMPH = (3600000/totalTime)/4295.59
     data = {"auth_token":"YOUR_AUTH_TOKEN","current":speedMPH}
     data_json = json.dumps(data)
-    response = requests.post(url, data=data_json, headers=headers)
+    response = urllib2.Request(url, data=data_json, headers=headers)
+    f = urllib2.urlopen(req)
+    f.close()
