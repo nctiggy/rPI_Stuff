@@ -52,6 +52,6 @@ while True:
     speedMPH = (3600000/totalTime)/4295.59
     data = {"auth_token":"YOUR_AUTH_TOKEN","current":speedMPH}
     data_json = json.dumps(data)
-    response = urllib2.Request(url, data=data_json, headers=headers)
+    req = urllib2.Request(url, data=data_json, headers=headers)
     f = urllib2.urlopen(req)
     f.close()
