@@ -49,7 +49,7 @@ while True:
     #print time.asctime( time.localtime(time.time()) )
     timeB = int(round(time.time() *1000))
     totalTime =  timeB-timeA
-    speedMPH = (3600000/totalTime)/4295.59
+    speedMPH = format((3600000/totalTime)/4295.59, '.2f')
     data = {"auth_token":"YOUR_AUTH_TOKEN","current":speedMPH}
     data_json = json.dumps(data)
     req = urllib2.Request(url, data=data_json, headers=headers)
