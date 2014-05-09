@@ -41,11 +41,11 @@ triggerB = numpy.mean(calibrateB) * 1.75
 
 while True:
 	while RCtime(17) < triggerA:
-        pass
+            pass
 	#print time.asctime( time.localtime(time.time()) )
 	timeA = int(round(time.time() * 1000))
 	while RCtime(18) < triggerB:
-        pass
+            pass
 	#print time.asctime( time.localtime(time.time()) )
 	timeB = int(round(time.time() *1000))
 	totalTime =  timeB-timeA
