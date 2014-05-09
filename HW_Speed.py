@@ -7,9 +7,14 @@
 import time
 import RPi.GPIO as GPIO, time, os
 import numpy
+import requests
+import json
 
 DEBUG = 1
 GPIO.setmode(GPIO.BCM)
+url = 'http://hotwheels.cfapps.io/widgets/mph'
+headers = {'Content-type': 'application/json'}
+
 
 def RCtime (RCpin):
         reading = 0
@@ -45,4 +50,6 @@ while True:
 	timeB = int(round(time.time() *1000))
 	totalTime =  timeB-timeA
 	speedMPH = (3600000/totalTime)/4295.59
-	print str(format(speedMPH, '.2f')) + "MPH"
+    data = {"auth_token":"YOUR_AUTH_TOKEN","current":speedMPH}
+    data_json = json.dumps(data)
+	response = requests.post(url, data=data_json, headers=headers)
