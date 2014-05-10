@@ -33,11 +33,11 @@ calibrateA=[]
 calibrateB=[]
 for x in range(0, 20):
     calibrateA.append(RCtime(17))
-triggerA = numpy.mean(calibrateA) * 1.75
+triggerA = numpy.mean(calibrateA) * 1.25
 print triggerA                               
 for x in range(0, 20):
     calibrateB.append(RCtime(18))
-triggerB = numpy.mean(calibrateB) * 1.75
+triggerB = numpy.mean(calibrateB) * 1.25
 print triggerB
 
 while True:
