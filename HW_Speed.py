@@ -33,20 +33,20 @@ calibrateB=[]
 for x in range(0, 20):
     calibrateA.append(RCtime(17))
 triggerA = numpy.mean(calibrateA) * 1.75
-# print triggerA                               
+print triggerA                               
 for x in range(0, 20):
     calibrateB.append(RCtime(18))
 triggerB = numpy.mean(calibrateB) * 1.75
-#print triggerB
+print triggerB
 
 while True:
     while RCtime(17) < triggerA:
         pass
-    #print time.asctime( time.localtime(time.time()) )
+    print time.asctime( time.localtime(time.time()) )
     timeA = int(round(time.time() * 1000))
     while RCtime(18) < triggerB:
         pass
-    #print time.asctime( time.localtime(time.time()) )
+    print time.asctime( time.localtime(time.time()) )
     timeB = int(round(time.time() *1000))
     totalTime =  timeB-timeA
     speedMPH = format((3600000/totalTime)/4295.59, '.2f')
