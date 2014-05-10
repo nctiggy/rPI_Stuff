@@ -26,6 +26,7 @@ def RCtime (RCpin):
     # This takes about 1 millisecond per loop cycle
     while (GPIO.input(RCpin) == GPIO.LOW):
         reading += 1
+    print reading
     return reading
 
 calibrateA=[]
