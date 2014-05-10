@@ -20,7 +20,7 @@ def RCtime (RCpin):
     reading = 0
     GPIO.setup(RCpin, GPIO.OUT)
     GPIO.output(RCpin, GPIO.LOW)
-    time.sleep(0.005)
+    time.sleep(0.002)
 
     GPIO.setup(RCpin, GPIO.IN)
     # This takes about 1 millisecond per loop cycle
